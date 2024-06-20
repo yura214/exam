@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        .content-block {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            padding: 20px 60px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            font-size: 24px;
+            box-sizing: border-box;
+        }
+
+        .content-block::before,
+        .content-block::after {
+            content: '';
+            background-color: white;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+
+        .content-block::before {
+            top: 0;
+            left: 0;
+            box-shadow: 240px 0 0 white, 0 60px 0 white, 240px 60px 0 white;
+        }
+
+        .content-block::after {
+            bottom: 0;
+            right: 0;
+            box-shadow: -240px 0 0 white, 0 -60px 0 white, -240px -60px 0 white;
+        }
+
+        .content-block .corner-tl,
+        .content-block .corner-br {
+            content: '';
+            background-color: white;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+
+        .content-block .corner-tl {
+            top: 0;
+            right: 0;
+        }
+
+        .content-block .corner-br {
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+    <title>Styled Block</title>
+</head>
+<body>
+    <div class="content-block">
+        Content
+        <div class="corner-tl"></div>
+        <div class="corner-br"></div>
+    </div>
+</body>
+</html>
